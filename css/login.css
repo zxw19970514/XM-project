@@ -1,0 +1,265 @@
+body .w990 {
+  margin: 0 auto;
+  width: 990px; }
+
+.wbox ::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+#gome-head {
+  position: relative;
+  height: 120px;
+  vertical-align: middle;
+  z-index: 980; }
+  #gome-head .logo {
+    margin: 18px 40px 0 0;
+    float: left; }
+    #gome-head .logo a {
+      background: url(../img/loginlogo.png) no-repeat;
+      width: 300px;
+      height: 62px;
+      margin-top: 13px;
+      display: block;
+      text-indent: -99px;
+      overflow: hidden; }
+
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+#safeTip {
+  background-color: #fff4e3;
+  border-top: 1px solid #fee6bc; }
+  #safeTip .safe {
+    width: 828px;
+    height: 29px;
+    padding-left: 10px;
+    margin: 0 auto;
+    background-color: #fff4e3;
+    color: #ff7f23;
+    font: 400 12px/29px "Microsoft Yahei"; }
+    #safeTip .safe em {
+      background: url(../img/css4.png) no-repeat;
+      background-position: -28px 0;
+      display: block;
+      float: left;
+      width: 16px;
+      height: 16px;
+      margin: 8px 5px 0 0; }
+    #safeTip .safe a {
+      color: #2875cc; }
+
+#content-bg {
+  background: #fff1e8;
+  width: 100%;
+  height: 480px; }
+  #content-bg .main {
+    width: 1200px;
+    height: 480px;
+    margin: 0 auto;
+    background-position: top center;
+    background-image: url(../img/loginbg.jpg);
+    position: relative;
+    z-index: 990; }
+
+.main .login-box {
+  width: 350px;
+  float: right;
+  margin-top: 24px;
+  margin-right: 105px;
+  position: relative;
+  background: #fff;
+  overflow: visible; }
+  .main .login-box .left {
+    float: left;
+    width: 175px; }
+  .main .login-box .right {
+    float: right;
+    width: 175px; }
+  .main .login-box .loginTitle {
+    position: relative;
+    height: 54px;
+    border-bottom: 1px solid #f4f4f4;
+    font: 500 18px "Microsoft Yahei";
+    text-align: center;
+    color: #5e5e5e;
+    right: 0;
+    overflow: hidden; }
+    .main .login-box .loginTitle a {
+      height: 18px;
+      width: 175px;
+      text-decoration: none;
+      padding-top: 16px; }
+  .main .login-box .loginBody {
+    min-height: 241px;
+    padding: 25px 11px 0 19px; }
+    .main .login-box .loginBody .loginForm {
+      width: 300px;
+      position: relative;
+      padding: 5px 10px 0; }
+  .main .login-box .copy-login {
+    overflow: hidden;
+    clear: both;
+    background-color: #fcfcfc;
+    padding: 9px 20px;
+    color: #a5a5a5;
+    position: relative;
+    border: 1px solid #f0f0f0; }
+
+.userlogin .login-item {
+  position: relative;
+  height: 52px; }
+
+.userlogin .txt {
+  position: relative;
+  padding: 8px 10px 7px;
+  width: 268px;
+  height: 25px;
+  border: 1px solid #CCC;
+  font-family: Arial,simsun;
+  outline: 0 none;
+  color: #333;
+  font-size: 14px;
+  line-height: 21px;
+  z-index: 2; }
+
+.userlogin .loginName .NameDefault {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  color: #A5A5A5;
+  font-size: 14px;
+  z-index: 3; }
+
+.userlogin .loginName .NameDefault2 {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  color: #A5A5A5;
+  font-size: 14px;
+  z-index: 3; }
+
+.userlogin .loginPassword .passwordDefault {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  color: #A5A5A5;
+  font-size: 14px;
+  z-index: 3;
+  display: block; }
+
+.userlogin .loginPassword .passwordDefault2 {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  color: #A5A5A5;
+  font-size: 14px;
+  z-index: 3;
+  display: block; }
+
+.userlogin .loginPassword .passwordDefault22 {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  color: #A5A5A5;
+  font-size: 14px;
+  z-index: 3;
+  display: block; }
+
+.userlogin .btn {
+  display: block;
+  width: 290px;
+  height: 42px;
+  background: #ff5757;
+  font: 500 18px/41px "Microsoft Yahei";
+  color: #fff;
+  text-align: center;
+  border: 0 none;
+  outline: 0;
+  word-spacing: 3px;
+  cursor: pointer; }
+
+#gome-foot {
+  border-top: 1px solid #dd00a7;
+  background: #f7f7f7;
+  margin-top: 15px; }
+  #gome-foot #gome-foot-box {
+    position: relative;
+    width: 990px;
+    margin: 0 auto;
+    padding: 20px 0 0;
+    background: #f7f7f7; }
+
+#gome-foot-box ul {
+  _width: 100%;
+  overflow: hidden; }
+  #gome-foot-box ul li {
+    float: left;
+    font: 12px/22px Arial,"Microsoft YaHei";
+    padding: 0 13px 0 0;
+    color: #ccc;
+    white-space: nowrap; }
+
+#gome-foot-box p {
+  font: 12px/22px Arial;
+  color: #999; }
+
+#gome-foot-box a {
+  color: #666; }
+
+#gome-foot-box .tw-w-ico-wrap {
+  position: relative;
+  padding-left: 23px; }
+
+#gome-foot-box .tw-w-mark-icon {
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 18px;
+  height: 20px;
+  background: url(../img/css.png) 0 -1712px; }
+
+.gome-foot-credit {
+  border-top: 1px solid #e6e6e6;
+  margin-top: 5px;
+  padding: 10px 0 25px;
+  _height: 100%;
+  overflow: hidden; }
+  .gome-foot-credit i {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background: url(../img/css.png) 0 -180px;
+    float: left; }
+  .gome-foot-credit b {
+    font: 12px/18px Arial,"Microsoft YaHei";
+    display: block;
+    width: 50px;
+    float: left;
+    color: #999;
+    padding: 0 30px 0 5px; }
+  .gome-foot-credit .credit-cxwz i {
+    background-position: -70px -180px; }
+  .gome-foot-credit .credit-xypj i {
+    background-position: -35px -180px; }
+  .gome-foot-credit .credit-hdjc i {
+    background-position: -105px -180px; }
+  .gome-foot-credit .credit-wgdj i {
+    background-position: -140px -180px; }
+  .gome-foot-credit .credit-report i {
+    background-position: -175px -180px; }
+  .gome-foot-credit .credit-baxx b {
+    width: 60px; }
+  .gome-foot-credit .credit-cxwz b {
+    padding-top: 9px; }
+  .gome-foot-credit .credit-wgdj b {
+    padding-top: 9px;
+    width: 60px; }
+  .gome-foot-credit .credit-report b {
+    width: 110px; }
