@@ -137,7 +137,7 @@
     <section id="gome-head" >
         <div class="w990">
             <div class="logo">
-                <a href="#" style="background-image: url(img/logo.png);float:left;width: 125px;"></a>
+                <a href="index.html" style="background-image: url(img/logo.png);float:left;width: 125px;"></a>
                 <a href="#" style="background-image: url(img/car.png);float:left;width: 125px;"></a>
             </div>
         </div>
@@ -160,7 +160,7 @@
             </div>
         </div>
     </section>
-    <!-- <table border="1" width="600" align="center">
+    <table border="1" width="990" align="center" class="ttt">
         <thead>
             <tr>
                 <th>选择</th>
@@ -174,7 +174,7 @@
         </thead>
         <tbody>
         </tbody>
-    </table> -->
+    </table>
 
     <section id="gome-foot">
             <div id="gome-foot-box">
@@ -263,7 +263,7 @@
         load(){
             var that=this;
             $.ajax({
-                url:"http://127.0.0.1/shopping/data/goods.json",
+                url:"http://127.0.0.1/XM-project/data/goods.json",
                 success:function(a,b,c){
                     that.res=a;
                     that.setlocal();
@@ -276,34 +276,42 @@
             this.display();
         }
         display(){
-            var str="";
-            for(var i=0;i<this.res.length;i++){
-                for(var j=0;j<this.goods.length;j++){
-                    if(this.res[i].goodsId == this.goods[j].id){
-                        // this.num1+=parseInt(this.goods[j].num);
-                        // this.sum1+=this.res[i].price*this.goods[j].num;
-                        str+=`<tr index="${this.res[i].goodsId}">
-                            <td><input type="checkbox" name="good" class="good"></td>
-                            <td><img src="${this.res[i].url}"></td>
-                            <td>${this.res[i].name}</td>
-                            <td>${this.res[i].price}</td>
-                            <td><input type="number" value="${this.goods[j].num}" class="num"></td>
-                            <td class="priceSum">${this.res[i].price*this.goods[j].num}</td>
-                            <td class="delete">删除</td>
-                        </tr>`
+            console.log( localStorage.getItem('goods'));
+            if(localStorage.getItem('goods')!='[]'){
+                $('.car-empty').remove();
+                var str="";
+                for(var i=0;i<this.res.length;i++){
+                    for(var j=0;j<this.goods.length;j++){
+                        if(this.res[i].goodsId == this.goods[j].id){
+                            // this.num1+=parseInt(this.goods[j].num);
+                            var nn=this.res[i].price;
+                            nn=nn.substr(1,4);
+                            // this.sum1+=nn*this.goods[j].num;
+                            str+=`<tr index="${this.res[i].goodsId}">
+                                <td><input type="checkbox" name="good" class="good"></td>
+                                <td><img src="${this.res[i].url}"></td>
+                                <td>${this.res[i].name}</td>
+                                <td>${this.res[i].price}</td>
+                                <td><input type="number" value="${this.goods[j].num}" class="num"></td>
+                                <td class="priceSum">${this.res[i].price*this.goods[j].num}</td>
+                                <td class="delete">删除</td>
+                            </tr>`
+                        }
                     }
                 }
-            }
-            str+=`<tr>
-                    <td>全选:<input type="checkbox" class="boxId" id="bbox"></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td id="snum">${this.num1}</td>
-                    <td id="ssum">${this.sum1}</td>
-                    <td></td>
-                </tr>`
-            this.tbody.innerHTML=str;
+                str+=`<tr>
+                        <td>全选:<input type="checkbox" class="boxId" id="bbox"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td id="snum">${this.num1}</td>
+                        <td id="ssum">${this.sum1}</td>
+                        <td></td>
+                    </tr>`
+                this.tbody.innerHTML=str;
+                }else if(localStorage.getItem('goods')=="[]"){
+                    $('.ttt').css('display','none');
+                }
         }
         addEvent(){
             var that=this;

@@ -16,12 +16,12 @@ header{position: relative;border-bottom: 1px solid #f3f3f3;background:#f8f8f8;he
 #gome-user:hover i.ph{background-position: -55px -433px;}
 .headerRight li b{display: inline-block;padding: 0 10px 0 10px;}
 .headerRight li i{background: url(../img/css.png) no-repeat; background-position: -62px -433px;display: inline-block;width: 7px;height: 4px;position: absolute;left:62px;top:14px;}
-#user-name i{position: relative; float:left;left:0;top:0;background: url(../img/css.png) no-repeat;background-position: 0 -337px;width: 55px;height: 55px;}
+#user-name i{position: relative; float:left;left:10px;top:0;background: url(../img/css.png) no-repeat;background-position: 0 -337px;width: 55px;height: 55px;}
 #user-name div{float:left;width: 220px;font: 400 12px/20px Arial,"Microsoft YaHei";padding: 0 0 0 15px;}
 #user-name p{line-height: 70px;}
 #gome-user:hover div.public-dropdown{display: block;border: 1px solid #e8e8e8;background: #fff;}
 #user-icon {border-top: 1px solid #f3f3f3;padding-top: 15px;position: relative;_height: 100%;}
-#user-icon p {line-height: 18px;}
+#user-icon p {line-height: 18px;padding:0 5px;}
 #user-icon p a {float: right;color: #ccc;}
 #user-icon p a:hover, #user-icon p span {color: #f5004b;}
 #user-icon div {margin: 10px 25px 0;}

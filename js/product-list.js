@@ -45,7 +45,7 @@ class Page{
                             </a>
                         </p>
                         <div class="item-price">
-                            <span class="price">${this.res[i].price}</span>
+                            <span class="price">¥${this.res[i].price}</span>
                         </div>
                         <p class="item-name">
                             <a href="#" class="item-link">

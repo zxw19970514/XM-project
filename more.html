@@ -187,10 +187,8 @@
         <div class="more-main">
             <div class="more-hgroup">
                 <h1>
-                        Apple iPhone XS Max 256G 金色 移动联通电信4G手机
                 </h1>
-                <h4>
-                        iPhone XS Max配备6.5英寸显示屏，先进的面容ID，突破性的双镜头系统，IP68级别抗水防尘特性。【前往国美线下门店Apple产品专区，可享受售后维修、私人设置、一对一课程预约等服务
+                <h4>    
                 </h4>
             </div>
             <div class="more-price">
@@ -198,18 +196,20 @@
                     <label class="price-left">国  美  价</label>
                     <div class="price-right">
                         <span id="prdPrice">
-                            <em>¥</em>
-                            8888
                         </span>
                     </div>
                 </div>
             </div>
+            <div class="more-info">
+
+            </div>
             <div class="more-btn">
-                <div>
-                    <input type="text" name="" id="">
-                    <a href=""></a>
-                    <a href=""></a>
+                <div class="btnppp">
+                    <input type="text" name="" id="" class="count" value="1">
+                    <i href="#" class="plus">+</i>
+                    <i href="#" class="minus">-</i>
                 </div>
+                <a class="addCart">加入购物车</a>
             </div>
             <div></div>
         </div>
@@ -319,22 +319,8 @@
 <script src="js/jquery.js"></script>
 <script src="../cookie.js"></script>
 <script src="libs/jquery.exzoom.js"></script>
+<script src="js/more.js"></script>
 <script>
-    $("#exzoom").exzoom({
-    "navWidth": 60,//列表每个宽度,该版本中请把宽高填写成一样
-    "navHeight": 60,//列表每个高度,该版本中请把宽高填写成一样
-    "navItemNum": 5,//列表显示个数
-    "navItemMargin": 7,//列表间隔
-    "navBorder": 1,//列表边框，没有边框填写0，边框在css中修改
-    "autoPlay": true,//是否自动播放
-    "autoPlayTimeout": 2000,//播放间隔时间
-});
- if(getCookie('loginon')=='true'){
-        console.log($('.use-name-login').children().html());
-        $('.use-name-login').children().html(getCookie('name'))
-        $('#denglu').children().html('欢迎您 '+getCookie('name'))
-        $('#zhuce').css('display','none');
-        $('#zhuce').next().css('display','none');
-    }
+ 
 </script>
 </html>
