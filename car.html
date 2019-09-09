@@ -5,14 +5,162 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="css/public.css">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/car.css">
     <style>
     img{width:50px;height:50px;}
     </style>
 </head>
 <body>
-    <h2>购物车<a href="list1.html">继续购物</a></h2>
-    <table border="1" width="600" align="center">
+        <header>
+                <div id="margin" style="width: 990px">
+                    <ul class="headerLeft">
+                        <li id="gome-user">
+                            <a href="#">国美会员<i class="ph"></i></a>
+                            <div class="public-dropdown">
+                                <div id="user-name">
+                                    <i></i>
+                                    <div>
+                                            <p class="use-name-login">
+                                                欢迎来到国美,
+                                                <a href="#">请登录！</a>
+                                            </p>
+                                    </div>
+                                </div>
+                                <div id="user-icon">
+                                    <p>
+                                        <a href="#">会员俱乐部</a>
+                                        <span>我的特权</span>
+                                    </p>
+                                    <div class="user-swiper">
+                                        <ul>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="gm-icon"></i>
+                                                    美豆抽奖
+                                                </a>
+                                                <a href="#">
+                                                    <i class="gm-icon"></i>
+                                                    退换货保障
+                                                </a>
+                                                <a href="#">
+                                                    <i class="gm-icon"></i>
+                                                    价格保护
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="gm-icon"></i>
+                                                    消费得美豆
+                                                </a>
+                                                <a href="#">
+                                                    <i class="gm-icon"></i>
+                                                    专属阶梯价
+                                                </a>
+                                                 <a href="#">
+                                                    <i class="gm-icon"></i>
+                                                    生日礼包
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#">
+                                                    <i class="gm-icon"></i>
+                                                    更多精彩
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+        
+                            </div>
+                        </li>
+                        <li id="denglu"><a href="#">登陆</a></li>
+                        <li id="zhuce"><a href="login.html">注册有礼</a></li><i></i>
+                    </ul>
+                    <ul class="headerRight">
+                        <li><a href="#">我的订单</a></li>
+                        <li id='gome-mygome'>
+                            <b><a href="#">我的国美</a><i></i></b>
+                            <div class="public-dropdown">
+                                <strong>
+                                    我的国美
+                                    <a href="#">请登录</a>
+                                </strong>
+                                <ul id="mygome-order">
+                                    <li><a href="#">待处理订单</a></li>
+                                    <li><a href="#">我的收藏</a></li>
+                                    <li><a href="#">个人资料</a></li>
+                                    <li><a href="#">我的美店</a></li>
+                                </ul>
+                                <ul id="mygome-coupon">
+                                    <li><a href="#">我的优惠券</a></li>
+                                </ul>
+                                <p>足迹</p>
+                            </div>
+                        </li>
+                        <li id="gome-enterprise">
+                            <b><a href="#">企业采购</a><i></i></b>
+                            <div class="public-dropdown">
+                                    <a href="#" class="gome-hezuo"></a>
+                            </div>
+                        </li>
+                        <li id="gome-service">
+                            <b><a href="#">服务中心</a><i></i></b>
+                            <div class="public-dropdown">
+                                <p><a href="#">用户服务</a></p>
+                                <ul>
+                                    <li><a href="#">售后服务</a></li>
+                                    <li><a href="#">帮助服务</a></li>
+                                    <li><a href="#">新手指南</a></li>
+                                    <li><a href="#">客服服务</a></li>
+                                    <li><a href="#">用户注销</a></li>
+                                </ul>
+                                <p><a href="#">商家服务</a></p>
+                                <ul>
+                                    <li><a href="#">商家入驻</a></li>
+                                    <li><a href="#">商家登录</a></li>
+                                    <li><a href="#">广告平台</a></li>
+                                    <li><a href="#">平台规则</a></li>
+                                    <li><a href="#">商家培训</a></li>
+                                </ul>
+                                <a href="#" class="service-a">在线客服</a>
+                            </div>
+                        </li>
+                        <li><b><a href="#">网站导航</a><i></i></b></li>
+                        <li><b><a href="#">手机国美</a><i></i></b></li>
+                    </ul>
+                </div>
+            </header>
+
+    <section id="gome-head" >
+        <div class="w990">
+            <div class="logo">
+                <a href="#" style="background-image: url(img/logo.png);float:left;width: 125px;"></a>
+                <a href="#" style="background-image: url(img/car.png);float:left;width: 125px;"></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="car-lists">
+        <div class="car-container">
+            <div class="car-empty">
+                <div class="car-empty-icon" style="width: 71px;height: 54px;
+                background-image: url(img/sprit.png);background-position: -576px 0;"></div>
+                <div class="car-empty-text">
+                    购物车内暂无商品，登录后将显示您之前加入的商品<br>
+                    <div style="margin-top: 8px">
+                        <div style="padding: 0px 15px 0px 0px; display: block;">
+                            <a href="login.html" style="color:white;float: left;" class="car-empty-btn">登录</a>
+                        </div>
+                        <a href="index.html" style="line-height:29px;">挑选商品></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- <table border="1" width="600" align="center">
         <thead>
             <tr>
                 <th>选择</th>
@@ -25,15 +173,8 @@
             </tr>
         </thead>
         <tbody>
-            <!-- <tr>
-                <td>DATA</td>
-                <td>DATA</td>
-                <td>DATA</td>
-                <td><input type="number" value="23"></td>
-                <td>删除</td>
-            </tr> -->
         </tbody>
-    </table>
+    </table> -->
 
     <section id="gome-foot">
             <div id="gome-foot-box">
@@ -108,6 +249,7 @@
     </section>
     <script src="js/ajax.2.0.js"></script>
     <script src='../jquery.js'></script>
+    <script src="../cookie.js"></script>
     <script>
     class Car{
         constructor(){
@@ -283,6 +425,16 @@
     }
 
     new Car();
+
+    console.log(getCookie('name'))
+    if(getCookie('loginon')=='true'){
+        console.log($('.use-name-login').children().html());
+        $('.use-name-login').children().html(getCookie('name'))
+        $('#denglu').children().html('欢迎您 '+getCookie('name'))
+        $('#zhuce').css('display','none');
+        $('#zhuce').next().css('display','none');
+        $('.car-empty-btn').css('display','none');
+    }
     </script>
 </body>
 </html>

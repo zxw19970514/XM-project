@@ -8,6 +8,7 @@ class Page{
         this.index = options.index;
 
         this.load()
+        this.addEvent();
     }
     load(){
         var that = this;
@@ -36,7 +37,7 @@ class Page{
         var str = "";
         for(var i=this.index*this.num;i<this.index*this.num+this.num;i++){
             if(i < this.res.length){
-                str += `<li>
+                str += `<li index="${this.res[i].goodsId}">
                     <div class="item-tab">
                         <p class="item-img">
                             <a href="#" class="item-link">
@@ -69,8 +70,22 @@ class Page{
         str=`<ul class="product-lists clearfix">
                     ${str}
                 </ul>`
-                console.log(str);
         this.list.html(str);
+    }
+    addEvent(){
+        var that=this;
+        this.current={};
+        $('.product-box').on('click','li',function(){
+            var flag=$(this).attr('index');
+            for(var i=0;i<that.res.length;i++){
+                if(flag==that.res[i].goodsId){
+                    that.current=JSON.stringify(that.res[i]);
+                    console.log(that.current);
+                    setCookie('current',that.current);
+                    window.location.href="more.html";
+                }
+            }
+        })
     }
 }
 

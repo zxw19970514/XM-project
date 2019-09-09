@@ -1,0 +1,29 @@
+.car-container {
+  width: 990px;
+  margin: 0 auto; }
+  .car-container .car-empty {
+    border: 1px solid #e6e6e6;
+    text-align: center;
+    padding: 56px 0; }
+  .car-container .car-empty-icon {
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden; }
+  .car-container .car-empty-text {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 10px;
+    font-size: 12px;
+    line-height: 26px; }
+  .car-container .car-empty-btn {
+    background: #e3101e;
+    color: #fff;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    padding: 4px 8px;
+    border-radius: 3px;
+    line-height: 20px; }
