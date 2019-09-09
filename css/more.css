@@ -1,0 +1,67 @@
+.wwbox {
+  width: 1200px;
+  margin: 0 auto; }
+
+#more-container {
+  overflow: hidden;
+  width: 1200px;
+  margin: 0 auto;
+  color: #5e5e5e;
+  font: 12px/12px arial,Microsoft YaHei; }
+  #more-container .screen {
+    width: 450px;
+    position: relative;
+    float: left; }
+
+.more-main {
+  width: 720px;
+  float: left;
+  margin: 0 0 0 30px; }
+  .more-main .more-hgroup {
+    position: relative;
+    padding-bottom: 16px; }
+    .more-main .more-hgroup h1 {
+      width: 610px;
+      font-size: 16px;
+      line-height: 26px;
+      color: #5e5e5e;
+      font-weight: 600;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+      -ms-word-break: break-all;
+      word-break: break-all;
+      padding-top: 5px; }
+    .more-main .more-hgroup h4 {
+      width: 610px;
+      font-size: 12px;
+      line-height: 20px;
+      color: #e3101e;
+      overflow: hidden;
+      -ms-word-wrap: break-word;
+      word-wrap: break-word;
+      -ms-word-break: break-all;
+      word-break: break-all;
+      padding-top: 1px; }
+  .more-main .more-price {
+    height: 52px;
+    width: 690px;
+    padding: 20px 10px 0 20px;
+    background: #f6f6f6;
+    position: relative; }
+    .more-main .more-price .price-other1 {
+      line-height: 34px;
+      padding-bottom: 18px; }
+      .more-main .more-price .price-other1 .price-left {
+        color: #888;
+        float: left; }
+      .more-main .more-price .price-other1 .price-right {
+        margin-left: 15px;
+        float: left; }
+        .more-main .more-price .price-other1 .price-right #prdPrice {
+          display: block;
+          font-family: Arial;
+          font-size: 24px;
+          color: #e3101e;
+          font-weight: 700;
+          margin-right: 10px;
+          float: left; }
