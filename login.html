@@ -39,15 +39,15 @@
                 </div>
                 <div class="loginBody">
                     <div class="loginForm">
-                        <form id="fm">
+                        <form id="fm" class="dl">
                             <div class="userlogin">
                                 <div class="loginName login-item">
                                     <span class="NameDefault">手机号码<em>/</em>用户名<em>/</em>邮箱<em>/</em>门店会员卡号</span>
-                                    <input type="text" id="loginuser" class="txt" name="loginuser">
+                                    <input type="text" id="loginuser" class="txt" name="loginuser" required>
                                 </div>
                                 <div class="loginPassword login-item">
                                     <span class="passwordDefault">密码</span>
-                                    <input type="password" class="txt" id="loginPassword">
+                                    <input type="password" class="txt" id="loginPassword" required>
                                 </div>
                                 <div class="remember"></div>
                                 <div class="actions">
@@ -57,19 +57,19 @@
                         </form>
                     </div>
                     <div class="loginForm" style="display: none">
-                        <form id="fm">
+                        <form id="fm" class="zc">
                             <div class="userlogin">
                                 <div class="loginName login-item">
                                     <span class="NameDefault2">手机号码<em>/</em>用户名<em>/</em>邮箱</span>
-                                    <input type="text" id="registerName" class="txt" name="registerName">
+                                    <input type="text" id="registerName" class="txt" name="registerName" required minlength="6">
                                 </div>
                                 <div class="loginPassword login-item">
                                     <span class="passwordDefault2">密码</span>
-                                    <input type="password" class="txt" id="registerPassword">
+                                    <input type="password" class="txt" id="registerPassword" required>
                                 </div>
                                 <div class="loginPassword login-item">
                                     <span class="passwordDefault22">确认密码</span>
-                                    <input type="password" class="txt" id="dobPassword">
+                                    <input type="password" class="txt" id="dobPassword" required equalTo="#registerPassword">
                                 </div>
                                 <div class="remember"></div>
                                 <div class="actions">
@@ -158,12 +158,12 @@
 </body>
 <script src="js/jquery.js"></script>
 <script src="js/loginbox.js"></script>
+<script src="../cookie.js"></script>
+<script src="js/jquery.validate.js"></script>
+<script src="js/jquery.validate.messages_zh.js"></script>
 <script>
-    var loginN=document.getElementById('loginuser');
-    var loginP=document.getElementById('loginPassword');
-    var registerN=document.getElementById('registerName');
-    var registerP=document.getElementById('registerPassword');
-    var regisertP2=document.getElementById('dobPassword')
+    $('.dl').validate()
+    $('.zc').validate()
     class Gome_login{
         constructor(){
             this.loginN=document.getElementById('loginuser');
@@ -172,8 +172,14 @@
             this.registerP=document.getElementById('registerPassword');
             this.regisertP2=document.getElementById('dobPassword')
             this.loginbtn=document.getElementById('loginbtn');
-            this.register=document.getElementById('registerbtn');
+            this.registerbtn=document.getElementById('registerbtn');
+            this.init();
             this.focusOrNot();
+            this.Event();
+        }
+        init(){
+            this.loginN.value=null;
+            this.registerN.value=null;
         }
         focusOrNot(){
             var that=this
@@ -193,10 +199,47 @@
                 $('.passwordDefault22').css("display","none");
             }
         }
-        login(){
-
+        Event(){
+            var that=this;
+            this.registerbtn.onclick=function(){
+                that.access=localStorage.getItem('access')? JSON.parse(localStorage.getItem("access")) : [];
+                var regname=that.registerN.value;
+                var regpass=that.registerP.value;
+                var o = that.access.some((val,index)=>{
+                    console.log(val.name)
+                    return regname == val.name;
+                })
+                if(o){
+                    alert("用户名已存在,请重新输入");
+                }else{
+                    that.access.push({
+                        name:regname,
+                        password:regpass
+                    })
+                }
+                localStorage.setItem("access",JSON.stringify(that.access));
+            }
+            this.loginbtn.onclick=function(){
+                that.access=JSON.parse(localStorage.getItem('access'));
+                var logname=that.loginN.value;
+                var logpass=that.loginP.value;
+                if(!logname){
+                    alert('用户名为空');
+                }else if(!logpass){
+                    alert('密码为空');
+                }
+                for(var i=0;i<that.access.length;i++){
+                    if(logname==that.access[i].name && logpass==that.access[i].password){
+                        removeCookie('name');
+                        setCookie('name',logname);
+                        setCookie('loginon','true');
+                        window.location.href='http://127.0.0.1/XM-project/index.html';
+                    }
+                }
+            }
         }
     }
     new Gome_login();
+
 </script>
 </html>

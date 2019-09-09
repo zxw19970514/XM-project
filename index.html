@@ -71,8 +71,8 @@
 
                     </div>
                 </li>
-                <li><a href="#">登陆</a></li>
-                <li><a href="#">注册有礼</a></li><i></i>
+                <li id="denglu"><a href="#">登陆</a></li>
+                <li id="zhuce"><a href="login.html">注册有礼</a></li><i></i>
             </ul>
             <ul class="headerRight">
                 <li><a href="#">我的订单</a></li>
@@ -1175,6 +1175,17 @@
 <script src="js/cuttime.js"></script>
 <script src="js/timme.js"></script>
 <script src="js/login.js"></script>
+<script src="../cookie.js"></script>
+<script>
+    console.log(getCookie('name'))
+    if(getCookie('loginon')=='true'){
+        console.log($('.use-name-login').children().html());
+        $('.use-name-login').children().html(getCookie('name'))
+        $('#denglu').children().html('欢迎您 '+getCookie('name'))
+        $('#zhuce').css('display','none');
+        $('#zhuce').next().css('display','none');
+    }
+</script>
 <script>
 </script>
 </html>
