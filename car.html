@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/login.css">
+    <style>
+    img{width:50px;height:50px;}
+    </style>
+</head>
+<body>
+    <h2>购物车<a href="list1.html">继续购物</a></h2>
+    <table border="1" width="600" align="center">
+        <thead>
+            <tr>
+                <th>选择</th>
+                <th>图片</th>
+                <th>名字</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th>总价</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td>DATA</td>
+                <td><input type="number" value="23"></td>
+                <td>删除</td>
+            </tr> -->
+        </tbody>
+    </table>
+
+    <section id="gome-foot">
+            <div id="gome-foot-box">
+                <ul>
+                    <li><a href="#">国美控股集团</a></li>
+                    <li><a href="#">国美管家</a></li>
+                    <li><a href="#">关于国美</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">|</a></li>
+                    <li><a href="#">品牌大全</a></li>
+                    <li><a href="#">商品专题</a></li>
+                    <li><a href="#">商品词</a></li>
+                    <li><a href="#">热词搜索</a></li>
+                    <li><a href="#">友情链接</a></li>
+                    <li><a href="#">风险监测</a></li>
+                    <li><a href="#">|</a></li>
+                    <li><a href="#">销售联盟</a></li>
+                    <li><a href="#">商家入驻</a></li>
+                    <li><a href="#">广告营销</a></li>
+                </ul>
+                <p>
+                    本公司游戏产品适合18岁以上成年人使用  违法和不良信息举报电话：021-39900132 
+                    <a href="#">互联网药品信息服务资格证编号（沪）-经营性-2019-0006</a>
+                </p>
+                <p>
+                    网络食品销售第三方平台提供者备案：沪网食备A0015号 
+                    <a href="#">网络文化经营许可证沪网文[2017]5537-436号</a>
+                    <a href="#">增值电信业务经营许可证</a>
+                </p>
+                <p>
+                    客服电话:4008113333  
+                    <a href="#">沪ICP备11009419号/京ICP备 19011786号</a>  
+                    <a href="#">京B2-20191290</a>  
+                    <a href="#">经营执照</a>  
+                    <a href="#">营业执照</a>  
+                    <a href="#">出版物经营许可证</a>
+                </p>
+                <p>
+                    ©2000-2019  国美在线电子商务有限公司版权所有  
+                    <a href="#" class="tw-w-ico-wrap">
+                        <i class="tw-w-mark-icon"></i>
+                        京公网安备 11010502038379号
+                    </a>
+                </p>
+                <div class="gome-foot-credit">
+                    <a href="#" class="credit-baxx">
+                        <i></i>
+                        <b>经营性网站备案信息</b>
+                    </a>
+                    <a href="#" class="credit-xypj">
+                        <i></i>
+                        <b>可信网站信用评价</b>
+                    </a>
+                    <a href="#" class="credit-cxwz">
+                        <i></i>
+                        <b>诚信网站</b>
+                    </a>
+                    <a href="#" class="credit-hdjc">
+                        <i></i>
+                        <b>朝阳网络警察</b>
+                    </a>
+                    <a href="#" class="credit-wgdj">
+                        <i></i>
+                        <b>网购大家评</b>
+                    </a>
+                    <a href="#" class="credit-report">
+                        <i></i>
+                        <b>上海市互联网违法和不良信息举报中心</b>
+                    </a>
+                </div>
+            </div>
+    </section>
+    <script src="js/ajax.2.0.js"></script>
+    <script src='../jquery.js'></script>
+    <script>
+    class Car{
+        constructor(){
+            this.tbody=document.querySelector('tbody');
+            this.num1=0;
+            this.sum1=0;
+            this.flag=0;
+            this.load();
+            this.addEvent();
+        }
+        load(){
+            var that=this;
+            $.ajax({
+                url:"http://127.0.0.1/shopping/data/goods.json",
+                success:function(a,b,c){
+                    that.res=a;
+                    that.setlocal();
+                },
+            })
+        }
+        setlocal(){
+            this.goods=localStorage.getItem('goods')? JSON.parse(localStorage.getItem('goods')):[];
+
+            this.display();
+        }
+        display(){
+            var str="";
+            for(var i=0;i<this.res.length;i++){
+                for(var j=0;j<this.goods.length;j++){
+                    if(this.res[i].goodsId == this.goods[j].id){
+                        // this.num1+=parseInt(this.goods[j].num);
+                        // this.sum1+=this.res[i].price*this.goods[j].num;
+                        str+=`<tr index="${this.res[i].goodsId}">
+                            <td><input type="checkbox" name="good" class="good"></td>
+                            <td><img src="${this.res[i].url}"></td>
+                            <td>${this.res[i].name}</td>
+                            <td>${this.res[i].price}</td>
+                            <td><input type="number" value="${this.goods[j].num}" class="num"></td>
+                            <td class="priceSum">${this.res[i].price*this.goods[j].num}</td>
+                            <td class="delete">删除</td>
+                        </tr>`
+                    }
+                }
+            }
+            str+=`<tr>
+                    <td>全选:<input type="checkbox" class="boxId" id="bbox"></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="snum">${this.num1}</td>
+                    <td id="ssum">${this.sum1}</td>
+                    <td></td>
+                </tr>`
+            this.tbody.innerHTML=str;
+        }
+        addEvent(){
+            var that=this;
+            $('tbody').on('click.qwe',function(){
+                var tar=event.target;
+                if(tar.name=="good"){
+                        var str="";
+                        var s=0;
+                        for(var i=0;i<$('.good').length;i++){
+                            if(!$('.good').eq(i)[0].checked){
+                                $('.boxId')[0].checked=false;
+                                that.flag=0;
+                            }
+                        }
+                        for(var i=0;i<$('.good').length;i++){
+                            if($('.good').eq(i)[0].checked){
+                                s+=1;
+                                console.log($('.good').length,s);
+                                if(s==$('.good').length){
+                                    $('#bbox')[0].checked=true;
+                                }
+                            }
+                        }
+                        if(tar.checked){
+                            that.id= $(tar).parent().parent().attr("index");
+                            that.goods=localStorage.getItem('goods')? JSON.parse(localStorage.getItem('goods')):[];
+                            for(var j=0;j<that.goods.length;j++){
+                            if(that.goods[j].id==that.id){
+                                that.num1+=parseInt(that.goods[j].num);
+                                that.sum1+=parseInt(that.goods[j].num*$(tar).parent().parent().children().next().next().next().html());
+                                
+                            }}
+                            $('#snum').html(that.num1);
+                            $('#ssum').html(that.sum1);
+                         
+                        }else{
+                            that.id=tar.parentNode.parentNode.getAttribute("index");
+                            that.goods=localStorage.getItem('goods')? JSON.parse(localStorage.getItem('goods')):[];
+                            for(var j=0;j<that.goods.length;j++){
+                            if(that.goods[j].id==that.id){
+                                that.num1-=parseInt(that.goods[j].num);
+                                that.sum1-=parseInt(that.goods[j].num*$(tar).parent().parent().children().next().next().next().html());
+                            }}
+                            $('#snum').html(that.num1);
+                            $('#ssum').html(that.sum1);
+                        }
+                }
+
+                if(tar.className == "delete"){
+                    that.id= $(tar).parent().attr("index");
+                    $(tar).parent().remove();
+                    that.setLocal(function(i){
+                        that.goods.splice(i,1)
+                    })
+                }
+
+                if(tar.className=="num"){
+                    that.val = $(tar).val();
+                    that.id =  $(tar).parent().parent().attr("index");
+                    var numA=0;
+                    var priceA=0;
+                    that.setLocal(function(i){
+                        that.goods[i].num = that.val;
+                    })
+                    for(var i=0;i<$('.num').length;i++){
+                    if($('.num').eq(i).parent().parent().find('.good')[0].checked){
+                        var te=parseInt($('.num').eq(i).val());
+                        numA+=te;
+                        var tt=parseInt($('.num').eq(i).val()*$(tar).parent().prev().html());
+                        priceA+=tt;
+                    }}
+                    $('#snum').html(numA);
+                    $('#ssum').html(priceA);
+                    that.num1=numA;
+                    that.sum1=priceA;
+                    $(tar).parent().next().html(that.val*$(tar).parent().prev().html())
+                    // that.display();
+                }
+
+                if(tar.className=="boxId"){
+                    var numA=0;
+                    var priceA=0;
+                    this.num1=0;
+                    this.sum1=0;
+                    if(that.flag==0){
+                        for(var i=0;i<$('.good').length;i++){
+                            $('.good')[i].checked=true;
+                        }
+                        that.flag=1;
+                        for(var i=0;i<$('.num').length;i++){
+                            numA+=parseInt($('.num').eq(i).val());
+                            priceA+=parseInt($('.priceSum').eq(i).html());
+                        }
+                        $('#snum').html(numA);
+                        $('#ssum').html(priceA);
+                        that.num1=numA;
+                        that.sum1=priceA;
+                    }else{
+                        for(var i=0;i<$('.good').length;i++){
+                            $('.good')[i].checked=false;
+                        }
+                        that.flag=0;
+                        that.sum1=0;
+                        that.num1=0;
+                        $('#snum').html(0);
+                        $('#ssum').html(0);
+                    }
+                }
+            })
+        }
+        setLocal(fn){
+            for(var i=0;i<this.goods.length;i++){
+                if(this.goods[i].id == this.id){
+                    fn(i);
+                }
+            }
+            localStorage.setItem("goods",JSON.stringify(this.goods));
+        }
+    }
+
+    new Car();
+    </script>
+</body>
+</html>

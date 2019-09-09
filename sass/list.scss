@@ -1,0 +1,168 @@
+#searchP{
+    clear: both;
+    width: 1200px;
+    margin: 0 auto;
+    overflow:hidden
+}
+#product-left{
+    float: left;
+    width: 198px;
+    _display: inline;
+    overflow: hidden;
+}
+#product-right{
+    float: right;
+    width: 992px;
+    _width: 992px;
+    .product-lists {
+        margin-top: 10px;
+        li{
+            float: left;
+            width: 220px;
+            padding: 35px 13px 10px;
+            border: 1px solid #fff;
+            transition: border .1s ease 0s;
+            _margin-left: -1px;
+            position: relative;
+            z-index: 1;
+            .item-tab{
+                .item-img{
+                    width: 220px;
+                    height: 210px;
+                    text-align: center;
+                    position: relative;
+                }
+                .item-price{
+                    height: 20px;
+                    line-height: 20px;
+                    *height: 23px;
+                    *line-height: 23px;
+                    margin: 13px 5px 5px;
+                    overflow: hidden;
+                    font-weight: 600;
+                    span{
+                        display: inline-block;
+                        margin-right: 2px;
+                        color: #e3101e;
+                        height: 23px;
+                        font-size: 20px;
+                        vertical-align: middle;
+                    }
+                }
+                .item-name{
+                    height: 40px;
+                    line-height: 20px;
+                    padding: 0 5px;
+                    overflow: hidden;
+                    word-wrap: break-word;
+                    word-break: break-all;
+                }
+                .item-comment{
+                    height: 28px;
+                    padding: 0 5px;
+                    line-height: 28px;
+                    margin-top: 2px;
+                    .comment {
+                        padding-left: 18px;
+                        color: #069;
+                        font-weight: 700;
+                        background: url(../img/css5.png) -51px 2px no-repeat;
+                        span {
+                            color: #333;
+                            font-family: Microsoft YaHei;
+                            font-size: 12px;
+                            font-weight: 400;
+                        }
+                    }
+                }
+                .item-shop{
+                    padding: 0 5px;
+                    line-height: 25px;
+                    height: 25px;
+                    .nnamezy {
+                        width: 28px;
+                        color: #fff;
+                        background: #e3101e;
+                        text-align: center;
+                        margin-right: 5px;
+                    }
+                    .nname {
+                        background: none;
+                    }
+                }
+            }
+        }
+    }
+}
+.filter-top{
+    height: 26px;
+    background-color: #f3f3f3;
+    padding: 6px 10px;
+    line-height: 24px;
+    .filter-order-box {
+        float: left;
+        height: 24px;
+        border: 1px solid #ccc;
+        background: #fff;
+        li {
+            float: left;
+            height: 24px;
+            cursor: pointer;
+        }
+        a {
+            padding: 6px 20px;
+            text-decoration: none;
+            outline: none;
+        }
+    }
+}
+.filter-order-box li:hover {
+    border: 1px solid #e3101e;
+    margin: -1px;
+}
+.cur{
+    background:#e3101e;
+    a{
+        color:#fff;
+    }
+}
+#product-left{
+    float: left;
+    width: 198px;
+    _display: inline;
+    overflow: hidden;
+    h3{
+        padding-left: 10px;
+        border: 1px solid #e6e6e6;
+        border-top: 2px solid #a5a5a5;
+        border-bottom: 0 none;
+        height: 32px;
+        font: 14px/32px Microsoft YaHei;
+    }
+    ul{
+        padding: 0 10px;
+        border: 1px solid #e6e6e6;
+        border-top: 0 none;
+        li{
+            line-height: 18px;
+            padding: 10px 0;
+            text-align: center;
+            .prtleft-img{
+                height: 160px;
+                width: 160px;
+            }
+            .prtleft-price{
+                color: #e3101e;
+                font: 400 18px/30px Arial;
+                text-align: left;
+            }
+            .prtleft-name{
+                text-align: left;
+                height: 36px;
+                overflow: hidden;
+                word-wrap: break-word;
+                word-break: break-all;
+            }
+        }
+    }
+}
