@@ -117,12 +117,55 @@ class Prtleft{
 }
 
 new Prtleft();
-new Page({
-    url:"http://127.0.0.1/XM-project/data/goods.json",
-    list:$(".product-box"),
-    pageBox:$(".pagination"),
-    num:8,
-    index:0
+
+if(getCookie('listtype')=='手机')
+{
+    new Page({
+        url:"http://127.0.0.1/XM-project/data/goods.json",
+        list:$(".product-box"),
+        pageBox:$(".pagination"),
+        num:8,
+        index:0
+    })
+}else if(getCookie('listtype')=='化妆品'){
+    new Page({
+        url:"http://127.0.0.1/XM-project/data/huazhuang.json",
+        list:$(".product-box"),
+        pageBox:$(".pagination"),
+        num:8,
+        index:0
+    })
+}
+
+$('#numberId').html(JSON.parse(localStorage.getItem('goods')).length)
+$('.filter-order-box').on('click','li',function(){
+    $(this).attr('class','cur');
+    $(this).siblings().attr('class','');
+})
+
+if(getCookie('loginon')=='true'){
+console.log($('.use-name-login').children().html());
+$('.use-name-login').children().html(getCookie('name'))
+$('#denglu').children().html('欢迎您 '+getCookie('name'))
+$('#zhuce').css('display','none');
+$('#zhuce').next().css('display','none');
+}
+
+$('.shopcar').on('mouseover',function(){
+    $(this).css('cursor','pointer');
+})
+
+$('.shopcar').on('click',function(){
+    if(getCookie('loginon')=='true'){
+        window.location.href="car.html"
+    }else{
+        alert('请先登陆');
+    }
+})
+
+$('.tijiao').on('click',function(){
+    setCookie('listtype',$('.key').val())
+    window.open('list.html')
 })
 
 

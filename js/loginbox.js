@@ -9,4 +9,6 @@ $('.loginTitle').on('mouseenter','a',function(){
         $('.loginForm').eq(1).css("display","block")
         $('.loginForm').eq(0).css("display","none")
     }
-});
+})
+
+;

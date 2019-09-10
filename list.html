@@ -145,7 +145,7 @@
                             <span class="type-selected">商品</span>
                             <i></i>
                         </div>
-                        <input type="text" name="" id="" placeholder="空调">
+                        <input type="text" name="" id="" placeholder="空调" class="key">
                         <input type="submit" class="tijiao" value="搜索">
                     </form>
                     <div class="keyword">
@@ -161,7 +161,12 @@
                 </div>
                 <div class="buy-car">
                     <div class="shopcar">
-                        <em></em>
+                        <em>
+                            <span class="shopnum">
+                                    <span id="numberId">0</span>
+                                    <i></i>
+                                </span>
+                        </em>
                         <span>我的购物车</span>
                         <i></i>
                     </div>
@@ -298,29 +303,9 @@
             </div>
         </div>
     </section>
-    <script src="../jquery.js"></script>
-    <script src="js/jquery.pagination.js"></script>
+    <script src="libs/jquery.js"></script>
+    <script src="libs/jquery.pagination.js"></script>
+    <script src="libs/cookie.js"></script>
     <script src="js/product-list.js"></script>
-    <script src="../cookie.js"></script>
-    <script>
-        $('.filter-order-box').on('click','li',function(){
-            $(this).attr('class','cur');
-            $(this).siblings().attr('class','');
-        })
-
-        
-        $('.shopcar').on('mouseover',function(){
-            $(this).css('cursor','pointer');
-        })
-
-        $('.shopcar').on('click',function(){
-            if(getCookie('loginon')=='true'){
-                window.location.href="car.html"
-            }else{
-                alert('请先登陆');
-            }
-        })
-
-    </script>
 </body>
 </html>

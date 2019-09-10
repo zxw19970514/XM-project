@@ -221,6 +221,8 @@ nav{height:40px;background: #f8f8f8;border-bottom: 1px solid #dd00a7;}
 .txt-cont{height: 22px;overflow: hidden;_width: 216px;}
 .txt-cont a{word-break: break-all;text-decoration: none;font-size: 13px;line-height: 22px;color: #5e5e5e;}
 
+.shopnum {position: absolute;height: 18px;line-height: 18px;padding: 0 3px;top: -18px;min-width: 14px;_width: 14px;text-align: center;left: 15px;background-color: #A5A5A5;color: #FFF;font-weight: 700;}
+.shopnum i {position: absolute;width: 0;height: 0;border: 4px dashed transparent;border-color: transparent transparent transparent #A5A5A5;border-right-color: transparent;border-right: 0;border-left-style: solid;overflow: hidden;bottom: -4px;left: 5px;}
 .floor-wrap .floor{position: relative;min-height: 480px;_height: 480px;_overflow: visible;}
 .floor .mt{height: 38px;padding-top: 32px;}
 .floor .mtTop{width: 210px;height: 38px;overflow: hidden;float: left;line-height: 38px;font-size: 20px;}
