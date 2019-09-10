@@ -25,8 +25,9 @@ class Car123{
     }
     display(){
         console.log( localStorage.getItem('goods'));
+        $('.car-empty').css('display','block');
         if(localStorage.getItem('goods')!='[]'){
-            $('.car-empty').remove();
+            $('.car-empty').css('display','none');
             var str="";
             for(var i=0;i<this.res.length;i++){
                 for(var j=0;j<this.goods.length;j++){
@@ -54,10 +55,13 @@ class Car123{
                     <td></td>
                     <td id="snum">${this.num1}</td>
                     <td id="ssum">${this.sum1}</td>
-                    <td></td>
+                    <td><div class="lkf">
+                    <i class="submit">提交订单</i>
+                </div></td>
                 </tr>`
             this.tbody.innerHTML=str;
             }else if(localStorage.getItem('goods')=="[]"){
+                $('.car-empty').css('display','block');
                 $('.ttt').css('display','none');
             }
     }
@@ -115,6 +119,7 @@ class Car123{
                     that.goods.splice(i,1)
                 })
                 if(localStorage.getItem('goods')=="[]"){
+                    $('.car-empty').css('display','block');
                     $('.ttt').css('display','none');
                 }
             }

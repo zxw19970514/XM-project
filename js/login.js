@@ -35,5 +35,9 @@ $('.tijiao').on('click',function(){
     window.open('list.html')
 })
 
-$('#numberId').html(JSON.parse(localStorage.getItem('goods')).length)
+if(getCookie('loginon')=='true'){
+    $('#numberId').html(JSON.parse(localStorage.getItem('goods')).length)
+}else{
+    $('#numberId').html(0)
+}
 ;

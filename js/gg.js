@@ -53,6 +53,8 @@ $('.dl').validate()
                         name:regname,
                         password:regpass
                     })
+                    alert('注册成功');
+                    window.location.href='login.html';
                 }
                 localStorage.setItem("access",JSON.stringify(that.access));
             }
