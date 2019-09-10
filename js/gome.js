@@ -26,7 +26,6 @@
                 function lazy(){
                     // 滚动的top
                     var scrollT = document.documentElement.scrollTop;
-                    console.log(arr)
                     for(var i=0;i<arr.length;i++){
                         // 滚动的top > 图片距离顶部的距离 - 可视区域的高度
                         if(scrollT > arr[i].offsetTop - clientH){
@@ -400,7 +399,6 @@ onscroll = function(){
 function lazy(){
     // 滚动的top
     var scrollT = document.documentElement.scrollTop;
-    console.log(arr)
     for(var i=0;i<arr.length;i++){
         // 滚动的top > 图片距离顶部的距离 - 可视区域的高度
         if(scrollT > arr[i].offsetTop - clientH){
