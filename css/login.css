@@ -12,8 +12,7 @@ body .w990 {
 #gome-head {
   position: relative;
   height: 120px;
-  vertical-align: middle;
-  z-index: 980; }
+  vertical-align: middle; }
   #gome-head .logo {
     margin: 18px 40px 0 0;
     float: left; }
@@ -92,7 +91,7 @@ body .w990 {
     right: 0;
     overflow: hidden; }
     .main .login-box .loginTitle a {
-      height: 18px;
+      height: 38px;
       width: 175px;
       text-decoration: none;
       padding-top: 16px; }

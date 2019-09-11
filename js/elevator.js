@@ -22,7 +22,7 @@ class Elevator{
     move(){
         var index=0;
         $("#alEve").children("li").click(function(){
-            $("html").animate({
+            $("html").stop().animate({
                 scrollTop:$(".flooraa").eq($(this).index())[0].offsetTop,
             })
             index=$(this).index();
@@ -33,7 +33,7 @@ class Elevator{
             }else{
                 index=6;
             }
-            $("html").animate({
+            $("html").stop().animate({
                 scrollTop:$(".flooraa").eq(index)[0].offsetTop,
             })
         })
@@ -43,7 +43,7 @@ class Elevator{
             }else{
                 index=0;
             }
-            $("html").animate({
+            $("html").stop().animate({
                 scrollTop:$(".flooraa").eq(index)[0].offsetTop,
             })
         })

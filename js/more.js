@@ -54,8 +54,9 @@ class Addcart{
     }
     addEvent(){
         var that=this;
+        var user=getCookie('name');
         $('.addCart').on('click',function(){
-            that.goods=localStorage.getItem('goods')?JSON.parse(localStorage.getItem('goods')):[];
+            that.goods=localStorage.getItem(user+"goods")?JSON.parse(localStorage.getItem(user+'goods')):[];
             var nnum=parseInt($('.count').val());
 
             if(that.goods.length<1){
@@ -80,7 +81,12 @@ class Addcart{
                     })
                 }
             }
-            localStorage.setItem("goods",JSON.stringify(that.goods));
+            localStorage.setItem(user+"goods",JSON.stringify(that.goods));
+            if(getCookie('loginon')=='true'){
+                $('#numberId').html(JSON.parse(localStorage.getItem(user+'goods')).length)
+            }else{
+                $('#numberId').html(0)
+            }
         })
     }
 }

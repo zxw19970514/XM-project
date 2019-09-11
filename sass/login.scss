@@ -17,7 +17,6 @@ body{
     position: relative;
     height: 120px;
     vertical-align: middle;
-    z-index: 980;
     .logo{
         margin: 18px 40px 0 0;
         float: left;
@@ -105,7 +104,7 @@ body{
             right: 0;
             overflow: hidden;
             a {
-                height: 18px;
+                height: 38px;
                 width: 175px;
                 text-decoration: none;
                 padding-top: 16px;

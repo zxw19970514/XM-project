@@ -34,9 +34,9 @@ $('.tijiao').on('click',function(){
     setCookie('listtype',$('.key').val())
     window.open('list.html')
 })
-
+var user=getCookie('name')
 if(getCookie('loginon')=='true'){
-    $('#numberId').html(JSON.parse(localStorage.getItem('goods')).length)
+    $('#numberId').html(JSON.parse(localStorage.getItem(user+'goods')).length)
 }else{
     $('#numberId').html(0)
 }

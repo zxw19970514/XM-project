@@ -19,14 +19,14 @@ class Car123{
         })
     }
     setlocal(){
-        this.goods=localStorage.getItem('goods')? JSON.parse(localStorage.getItem('goods')):[];
+        this.user=getCookie('name');
+        this.goods=localStorage.getItem(this.user+'goods')? JSON.parse(localStorage.getItem(this.user+'goods')):[];
 
         this.display();
     }
     display(){
-        console.log( localStorage.getItem('goods'));
         $('.car-empty').css('display','block');
-        if(localStorage.getItem('goods')!='[]'){
+        if(localStorage.getItem(this.user+'goods')!='[]'){
             $('.car-empty').css('display','none');
             var str="";
             for(var i=0;i<this.res.length;i++){
@@ -41,7 +41,7 @@ class Car123{
                             <td><img src="${this.res[i].url}"></td>
                             <td>${this.res[i].name}</td>
                             <td>${this.res[i].price}</td>
-                            <td style="width:50px"><input style="width:50px" type="number" value="${this.goods[j].num}" class="num"></td>
+                            <td style="width:50px"><input style="width:50px" type="number" value="${this.goods[j].num}" class="num" ></td>
                             <td class="priceSum">${this.res[i].price*this.goods[j].num}</td>
                             <td class="delete">删除</td>
                         </tr>`
@@ -60,7 +60,7 @@ class Car123{
                 </div></td>
                 </tr>`
             this.tbody.innerHTML=str;
-            }else if(localStorage.getItem('goods')=="[]"){
+            }else if(localStorage.getItem(this.user+'goods')=="[]"){
                 $('.car-empty').css('display','block');
                 $('.ttt').css('display','none');
             }
@@ -89,7 +89,8 @@ class Car123{
                     }
                     if(tar.checked){
                         that.id= $(tar).parent().parent().attr("index");
-                        that.goods=localStorage.getItem('goods')? JSON.parse(localStorage.getItem('goods')):[];
+                        that.goods=localStorage.getItem(that.user+'goods')? JSON.parse(localStorage.getItem(that.user+'goods')):[];
+                        console.log(that.goods)
                         for(var j=0;j<that.goods.length;j++){
                         if(that.goods[j].id==that.id){
                             that.num1+=parseInt(that.goods[j].num);
@@ -101,7 +102,7 @@ class Car123{
                      
                     }else{
                         that.id=tar.parentNode.parentNode.getAttribute("index");
-                        that.goods=localStorage.getItem('goods')? JSON.parse(localStorage.getItem('goods')):[];
+                        that.goods=localStorage.getItem(that.user+'goods')? JSON.parse(localStorage.getItem(that.user+'goods')):[];
                         for(var j=0;j<that.goods.length;j++){
                         if(that.goods[j].id==that.id){
                             that.num1-=parseInt(that.goods[j].num);
@@ -118,13 +119,17 @@ class Car123{
                 that.setLocal(function(i){
                     that.goods.splice(i,1)
                 })
-                if(localStorage.getItem('goods')=="[]"){
+                console.log(localStorage.getItem(that.user+'goods'))
+                if(localStorage.getItem(that.user+'goods')=="[]"){
                     $('.car-empty').css('display','block');
                     $('.ttt').css('display','none');
                 }
             }
 
             if(tar.className=="num"){
+                if(parseInt($(tar).val())<1){
+                    $(tar)[0].value=0;
+                }
                 that.val = $(tar).val();
                 that.id =  $(tar).parent().parent().attr("index");
                 var numA=0;
@@ -184,7 +189,7 @@ class Car123{
                 fn(i);
             }
         }
-        localStorage.setItem("goods",JSON.stringify(this.goods));
+        localStorage.setItem(this.user+"goods",JSON.stringify(this.goods));
     }
 }
 
@@ -197,4 +202,9 @@ if(getCookie('loginon')=='true'){
     $('#zhuce').css('display','none');
     $('#zhuce').next().css('display','none');
     $('.car-empty-btn').css('display','none');
-};
+}
+
+if($('#shopnn').val()<=0){
+    $('#shopnn').val()=0;
+}
+;

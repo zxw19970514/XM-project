@@ -9,35 +9,6 @@
             success:function(res){
                 that.res=res;
                 that.display();
-                var clientH = document.documentElement.clientHeight;
-                var aimg = document.querySelectorAll("img");
-                var arr = [];
-                for(var i=0;i<aimg.length;i++){
-                    arr.push(aimg[i])
-                }
-            
-                lazy();
-            
-                onscroll = function(){
-                    lazy();
-                }
-            
-            
-                function lazy(){
-                    // 滚动的top
-                    var scrollT = document.documentElement.scrollTop;
-                    for(var i=0;i<arr.length;i++){
-                        // 滚动的top > 图片距离顶部的距离 - 可视区域的高度
-                        if(scrollT > arr[i].offsetTop - clientH){
-                            // 要出现了，要加载了
-                            arr[i].src = arr[i].getAttribute("a-arc");
-                            // 当图片已经被加载了，就从数组中将元素删除
-                            arr.splice(i,1);
-                            // 在循环中改变了数组的成员的排列方式，要将索引，回退1，才能拿到向前补位的成员
-                            i--;
-                        }
-                    }
-                }
             }
         })
     }
@@ -48,9 +19,9 @@
                 <span>${this.res[0].disp}</span>
             </div>
             <div class="fl_inner">
-                <a href="#"><img a-arc="${this.res[0].img1}" alt="" class="_special"></a>
-                <a href="#"><img a-arc="${this.res[0].img2}" alt="" class="img_w199"></a>
-                <a href="#"><img a-arc="${this.res[0].img3}" alt="" class="img_w199"></a>
+                <a href="#"><img data-original="${this.res[0].img1}" alt="" class="_special"></a>
+                <a href="#"><img data-original="${this.res[0].img2}" alt="" class="img_w199"></a>
+                <a href="#"><img data-original="${this.res[0].img3}" alt="" class="img_w199"></a>
             </div>`
         $('.f_m_l').html(str);
     }
@@ -76,9 +47,9 @@ class F_m_c{
                 <span>${this.res[0].disp}</span>
             </div>
             <div class="fl_inner">
-                <a href="#"><img a-arc="${this.res[0].img1}" alt="" class="_special"></a>
-                <a href="#"><img a-arc="${this.res[0].img2}" alt="" class="img_w199"></a>
-                <a href="#"><img a-arc="${this.res[0].img3}" alt="" class="img_w199"></a>
+                <a href="#"><img data-original="${this.res[0].img1}" alt="" class="_special"></a>
+                <a href="#"><img data-original="${this.res[0].img2}" alt="" class="img_w199"></a>
+                <a href="#"><img data-original="${this.res[0].img3}" alt="" class="img_w199"></a>
             </div>`
         $('.f_m_c').html(str);
     }
@@ -105,17 +76,17 @@ class F_m_r{
             </div>
             <div class="fl_inner">
                 <div class="f_inner_l">
-                    <a href="#" class="line-dash"><img a-arc="${this.res[0].img1}" alt=""></a>
-                    <a href="#" class="line-dash"><img a-arc="${this.res[0].img2}" alt=""></a>
+                    <a href="#" class="line-dash"><img data-original="${this.res[0].img1}" alt=""></a>
+                    <a href="#" class="line-dash"><img data-original="${this.res[0].img2}" alt=""></a>
                 </div>
                 <div class="f_inner_r">
-                    <a href="#"><img a-arc="${this.res[0].img3}" alt=""></a>
-                    <a href="#"><img a-arc="${this.res[0].img4}" alt=""></a>
-                    <a href="#"><img a-arc="${this.res[0].img5}" alt=""></a>
-                    <a href="#"><img a-arc="${this.res[0].img6}" alt=""></a>
-                    <a href="#"><img a-arc="${this.res[0].img7}" alt=""></a>
-                    <a href="#"><img a-arc="${this.res[0].img8}" alt=""></a>
-                    <a href="#"><img a-arc="${this.res[0].img9}" alt=""></a>
+                    <a href="#"><img data-original="${this.res[0].img3}" alt=""></a>
+                    <a href="#"><img data-original="${this.res[0].img4}" alt=""></a>
+                    <a href="#"><img data-original="${this.res[0].img5}" alt=""></a>
+                    <a href="#"><img data-original="${this.res[0].img6}" alt=""></a>
+                    <a href="#"><img data-original="${this.res[0].img7}" alt=""></a>
+                    <a href="#"><img data-original="${this.res[0].img8}" alt=""></a>
+                    <a href="#"><img data-original="${this.res[0].img9}" alt=""></a>
                 </div>
             </div>`
         $('.f_m_r').html(str);
@@ -147,7 +118,7 @@ class Catch{
             count++;
             str1+=`<div class="first_0 list_li">
                                 <a href="#">
-                                    <img a-arc="${this.res[i].img}" alt="" width="120" height="120">
+                                    <img data-original="${this.res[i].img}" alt="" width="120" height="120">
                                     <div class="c-price">
                                         <span>¥</span>
                                         <i>${this.res[i].Yprice}</i>
@@ -254,7 +225,7 @@ class Glist{
         for(var i=0;i<this.res.length;i++){
             str+=`<li>
                     <div class="mai_img">
-                        <a href="#"><img a-arc="${this.res[i].img}" alt=""></a>
+                        <a href="#"><img data-original="${this.res[i].img}" alt=""></a>
                     </div>
                     <div class="mai_matter">
                         <div class="matter-title"><a href="#">${this.res[i].title}</a></div>
@@ -286,7 +257,7 @@ class Interest{
     }
     display(){
         var str="";
-        str=`<div><a href="#" class="list-img"><img a-arc="${this.res[0].img}" alt=""></a></div>
+        str=`<div><a href="#" class="list-img"><img data-original="${this.res[0].img}" alt=""></a></div>
             <div class="list-txt-t clearfix">
                 <span class="txt-title">
                     <span>设计</span>
@@ -378,36 +349,3 @@ $('#listNav').on('mouseleave','li',function(){
     $(".extNav").css("display","none");
     $(".category").eq(ind).css("display","none");
 })
-
-// $('.user-swiper').terseBanner({
-//     btn:true,
-// })
-var clientH = document.documentElement.clientHeight;
-var aimg = document.querySelectorAll("img");
-var arr = [];
-for(var i=0;i<aimg.length;i++){
-    arr.push(aimg[i])
-}
-
-lazy();
-
-onscroll = function(){
-    lazy();
-}
-
-
-function lazy(){
-    // 滚动的top
-    var scrollT = document.documentElement.scrollTop;
-    for(var i=0;i<arr.length;i++){
-        // 滚动的top > 图片距离顶部的距离 - 可视区域的高度
-        if(scrollT > arr[i].offsetTop - clientH){
-            // 要出现了，要加载了
-            arr[i].src = arr[i].getAttribute("a-arc");
-            // 当图片已经被加载了，就从数组中将元素删除
-            arr.splice(i,1);
-            // 在循环中改变了数组的成员的排列方式，要将索引，回退1，才能拿到向前补位的成员
-            i--;
-        }
-    }
-};

@@ -110,7 +110,8 @@
       text-decoration: none;
       margin-right: 8px;
       font: 18px/22px 'Microsoft Yahei';
-      color: #fff; }
+      color: #fff;
+      cursor: pointer; }
   .more-main .more-info {
     padding: 20px 10px 0 20px; }
     .more-main .more-info p {
