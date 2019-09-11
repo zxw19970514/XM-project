@@ -136,8 +136,10 @@ if(getCookie('listtype')=='手机')
         index:0
     })
 }
-
-$('#numberId').html(JSON.parse(localStorage.getItem('goods')).length)
+var user=getCookie('name')
+if(getCookie('loginon')=='true'){
+    $('#numberId').html(JSON.parse(localStorage.getItem(user+'goods')).length)
+}
 $('.filter-order-box').on('click','li',function(){
     $(this).attr('class','cur');
     $(this).siblings().attr('class','');
@@ -146,10 +148,18 @@ $('.filter-order-box').on('click','li',function(){
 if(getCookie('loginon')=='true'){
 console.log($('.use-name-login').children().html());
 $('.use-name-login').children().html(getCookie('name'))
-$('#denglu').children().html('欢迎您 '+getCookie('name'))
+var str=`欢迎您 ${getCookie('name')}`
+$('#denglu').children().html(str)
+var box=$("<li><a class='zhuxiao'>注销</a></li>")
+$('.headerLeft').append(box);
 $('#zhuce').css('display','none');
 $('#zhuce').next().css('display','none');
 }
+$('.zhuxiao').on('click',function(){
+    removeCookie('name');
+    setCookie('loginon','flase');
+    window.location.href="index.html";
+})
 
 $('.shopcar').on('mouseover',function(){
     $(this).css('cursor','pointer');

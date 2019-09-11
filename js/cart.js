@@ -198,11 +198,18 @@ new Car123();
 if(getCookie('loginon')=='true'){
     console.log($('.use-name-login').children().html());
     $('.use-name-login').children().html(getCookie('name'))
-    $('#denglu').children().html('欢迎您 '+getCookie('name'))
+    var str=`欢迎您 ${getCookie('name')}`
+    $('#denglu').children().html(str)
+    var box=$("<li><a class='zhuxiao'>注销</a></li>")
+    $('.headerLeft').append(box);
     $('#zhuce').css('display','none');
     $('#zhuce').next().css('display','none');
-    $('.car-empty-btn').css('display','none');
-}
+    }
+    $('.zhuxiao').on('click',function(){
+        removeCookie('name');
+        setCookie('loginon','flase');
+        window.location.href="index.html";
+    })
 
 if($('#shopnn').val()<=0){
     $('#shopnn').val()=0;

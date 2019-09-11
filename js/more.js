@@ -91,4 +91,11 @@ class Addcart{
     }
 }
 new Addcart();
+$('.addCart').shoping({
+    endElement: ".shopnum", //结束元素节点，即页面上购物车位置
+    iconCSS: "", //飞过的图片样式
+    iconImg: "img/cart.png", //飞过的图片信息
+    endFunction: function(element) { //动画结束后的回调
+    }
+})
 ;
